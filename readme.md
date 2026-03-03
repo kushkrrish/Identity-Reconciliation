@@ -5,7 +5,7 @@ A backend service that identifies and links customer contacts across multiple pu
 ## Live Endpoint
 
 ```
-POST https://your-service-name.onrender.com/identify
+POST https://identity-reconciliation-srlr.onrender.com/identify
 ```
 
 > Replace with your actual Render URL after deployment.
