@@ -22,7 +22,7 @@ model Contact{
   updatedAt       DateTime  @updatedAt
   deletedAt       DateTime?
 
-
+  @@map("contact")
   @@index([email])
   @@index([phoneNumber])
   @@index([linkedId])
