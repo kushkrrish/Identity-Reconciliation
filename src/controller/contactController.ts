@@ -1,0 +1,18 @@
+import { identifyContact } from "../services/ContactService";
+import { Request, Response } from "express";
+
+export default async function contactController(req: Request, res: Response) {
+    try {
+        const { email, phoneNumber } = req.body;
+        if (!email && !phoneNumber) {
+            return res.status(400).json({
+                error: 'email or phoneNumber required'
+            })
+        }
+        const result = await identifyContact(email || null, phoneNumber?.toString() || null);
+        return res.status(200).json(result);
+    } catch (error) {
+        console.error(error)
+        return res.status(500).json({ error: 'Internal server error' })
+    }
+}
