@@ -3,7 +3,7 @@ import buildResponse from "../utils/responseBuilder";
 export async function identifyContact(email: string | null, phoneNumber: string | null) {
     try {
         // find out match contacts
-        return await prisma.$transaction(async (tx) => {
+        return await prisma.$transaction(async (tx:any) => {
             const matchedContacts = await tx.contact.findMany({
                 where: {
                     deletedAt: null,
@@ -46,7 +46,7 @@ export async function identifyContact(email: string | null, phoneNumber: string 
             });
             // if multiple primary 
             // then oldest createdAt wins
-            primaryContacts.sort((a, b) =>
+            primaryContacts.sort((a:any, b:any) =>
                 a.createdAt.getTime() - b.createdAt.getTime()
             );
             const truePrimary = primaryContacts[0];
