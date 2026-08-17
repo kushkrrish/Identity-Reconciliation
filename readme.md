@@ -2,15 +2,7 @@
 
 A backend service that identifies and links customer contacts across multiple purchases, built for the Bitespeed Backend Task.
 
-## Live Endpoint
 
-```
-POST https://identity-reconciliation-srlr.onrender.com/identify
-```
-
-> Replace with your actual Render URL after deployment.
-
----
 
 ## Problem Statement
 
